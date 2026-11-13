@@ -1,0 +1,352 @@
+<!-- 
+  ========================================================================
+  INSTRUCCIONES DE EDICIÓN RÁPIDA (HTML):
+  - Textos de los novios, frases y fechas: Búscalos por las etiquetas de nombres y fechas principales.
+  - Enlaces de Google Maps: Modifica los atributos 'href' en los botones de ubicación.
+  - Mesa de regalos: Cambia el enlace de Liverpool y el número de evento en su respectiva sección.
+  - WhatsApp para RSVP: Edita el número telefónico en el enlace de WhatsApp (ej. 522211869156).
+  - Rutas de imágenes: Están apuntando a 'assets/images/foto-X.jpg'. Asegúrate de tenerlas en esa carpeta.
+  - Audio: El archivo de música está configurado en 'assets/audio/music.mp3'.
+  ========================================================================
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valeria & Andrés — Nuestra Boda</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Hoja de Estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- PANTALLA DE APERTURA / SOBRE -->
+    <div id="envelope-overlay" class="envelope-overlay">
+        <div id="envelope-container" class="envelope-container">
+            <!-- Solapa superior triangular -->
+            <div class="envelope-flap"></div>
+            
+            <!-- Sello de lacre -->
+            <div class="envelope-seal">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <!-- Solapas internas que forman el sobre -->
+            <div class="envelope-pocket"></div>
+
+            <!-- Información visible al centro -->
+            <div class="envelope-content-inner">
+                <span class="envelope-subtitle">Boda de</span>
+                <h1>Valeria & Andrés</h1>
+                <p class="envelope-date">16 . 04 . 2027</p>
+                <button id="open-invitation-btn" class="btn-primary">
+                    <i class="fa-solid fa-envelope-open"></i> Abrir Invitación
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- REPRODUCTOR DE MÚSICA FLOTANTE -->
+    <div id="audio-control" class="audio-control hidden">
+        <button id="audio-toggle-btn" title="Reproducir / Pausar música">
+            <i id="audio-icon" class="fa-solid fa-music"></i>
+        </button>
+        <audio id="bg-music" loop>
+            <source src="assets/audio/music.mp3" type="audio/mp3">
+            Tu navegador no soporta audio.
+        </audio>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL DE LA INVITACIÓN -->
+    <main id="main-content" class="main-content blurred">
+
+<!-- SECCIÓN HERO (PORTADA) -->
+        <header class="hero-section">
+            <div class="hero-image-container">
+                <img src="assets/img/foto1.jpeg" alt="Frida y Andrés" class="hero-img">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <span class="save-the-date">NUESTRA BODA</span>
+                <h1>Valeria <span class="ampersand">&</span> Andrés</h1>
+                <p class="hero-phrase">“Dijiste una mesa para dos y el universo entendió una vida para dos”</p>
+                <div class="hero-date-badge">
+                    <span>16 . 04 . 2027</span>
+                </div>
+            </div>
+            <!-- INDICADOR DE DESLIZAMIENTO -->
+            <div class="scroll-indicator">
+                <span>Desliza</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </header>
+
+        <!-- SECCIÓN DE BIENVENIDA / MENSAJE -->
+        <section class="welcome-section container">
+            <div class="ornament"><i class="fa-solid fa-dove"></i></div>
+            <h2>Dos corazones, una promesa</h2>
+            <p class="welcome-text">
+                Y toda una vida por delante. ¿Nos acompañas a decir "sí"?
+            </p>
+            <div class="parents-info">
+                <div class="parents-group">
+                    <h3>Padres de la Novia</h3>
+                    <p>Vianey Pérez Tapia</p>
+                    <p>Andrea González Sánchez</p>
+                </div>
+                <div class="parents-divider"></div>
+                <div class="parents-group">
+                    <h3>Padres del Novio</h3>
+                    <p>Ramiro Osorio Ortiz</p>
+                    <p>Arlett Moro Miranda</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CUENTA REGRESIVA -->
+        <section class="countdown-section">
+            <div class="container">
+                <h2>Faltan</h2>
+                <div id="countdown" class="countdown-grid">
+                    <div class="countdown-box">
+                        <span id="days">00</span>
+                        <span class="label">Días</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="hours">00</span>
+                        <span class="label">Horas</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="minutes">00</span>
+                        <span class="label">Minutos</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="seconds">00</span>
+                        <span class="label">Segundos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN ITINERARIO -->
+        <section class="itinerary-section container">
+            <div class="section-header">
+                <h2>Itinerario del Gran Día</h2>
+                <p>Acompañanos en cada momento especial</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fa-solid fa-church"></i></div>
+                    <div class="timeline-content">
+                        <span class="time">17:30 hrs</span>
+                        <h3>Ceremonia Religiosa</h3>
+                        <p>Hacienda San José Actipan</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fa-solid fa-file-signature"></i></div>
+                    <div class="timeline-content">
+                        <span class="time">18:30 hrs</span>
+                        <h3>Ceremonia Civil</h3>
+                        <p>Hacienda San José Actipan</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fa-solid fa-glass-cheers"></i></div>
+                    <div class="timeline-content">
+                        <span class="time">19:00 hrs</span>
+                        <h3>Recepción</h3>
+                        <p>Hacienda San José Actipan</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fa-solid fa-utensils"></i></div>
+                    <div class="timeline-content">
+                        <span class="time">20:30 hrs</span>
+                        <h3>Cena</h3>
+                        <p>Disfrutemos juntos</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fa-solid fa-music"></i></div>
+                    <div class="timeline-content">
+                        <span class="time">21:40 hrs</span>
+                        <h3>Apertura de Baile</h3>
+                        <p>¡A celebrar se ha dicho!</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fa-solid fa-moon"></i></div>
+                    <div class="timeline-content">
+                        <span class="time">02:00 hrs</span>
+                        <h3>Fin del Evento</h3>
+                        <p>Gracias por acompañarnos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN UBICACIÓN PRINCIPAL -->
+        <section class="location-section container">
+            <div class="location-card">
+                <div class="section-separator-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                <h2>Ubicación de la Boda</h2>
+                <h3>Hacienda San José Actipan</h3>
+                <p>Tonantzintla Hacienda, Km 2.1 Carretera Cholula, San José Actipan, 72817 San Andrés Cholula, Pue.</p>
+                <span class="footer-badge">Evento exclusivo para mayores de edad</span>
+                <a href="https://www.google.com/maps/place/Hacienda+San+Jose+Actipan/@19.0448375,-98.3150749,17z/data=!3m1!4b1!4m6!3m5!1s0x85cfc87c320cb541:0x3796f0bf6533a816!8m2!3d19.0448375!4d-98.3150749!16s%2Fg%2F1w0p5zfg?entry=ttu" target="_blank" class="btn-secondary">
+                    <i class="fa-solid fa-diamond-turn-right"></i> Ver en Google Maps
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN TORNABODA -->
+        <section class="tornaboda-section container">
+            <div class="tornaboda-card">
+                <span class="badge-tornaboda">¡Sobrevivientes!</span>
+                <div class="section-separator-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+                <h2>Tornaboda</h2>
+                <p class="tornaboda-date"><i class="fa-regular fa-calendar"></i> Sábado 17 de Abril • 13:00 hrs</p>
+                <h3>Salón Jardín Las Mariposas</h3>
+                <p><i class="fa-solid fa-map-pin"></i> C. Morelos 26, Sanctorum, 72730 Sanctorum, Pue.</p>
+                <span class="footer-badge">¡Evento apto para todas las edades!</span>
+                <a href="https://www.google.com/maps/place/Salon+Jardin+Las+Mariposas/@19.1004658,-98.2568177,17z/data=!3m1!4b1!4m6!3m5!1s0x85cfc42854552e3d:0xb14ee56ef39e16e8!8m2!3d19.1004658!4d-98.2568177!16s%2Fg%2F11dxdknn4r?entry=ttu" target="_blank" class="btn-secondary">
+                    <i class="fa-solid fa-map-location-dot"></i> Cómo llegar a la Tornaboda
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN GALERÍA DE FOTOS -->
+        <section class="gallery-section container">
+            <div class="section-header">
+                <div class="section-separator-icon"><i class="fa-solid fa-camera-retro"></i></div>
+                <h2>Nuestros Momentos</h2>
+                <p>Instantes capturados con amor</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/img/foto2.jpeg" alt="Frida y Andrés 1" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/foto4.jpeg" alt="Frida y Andrés 3" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+
+<!-- SECCIÓN CÓDIGO DE VESTIMENTA -->
+<section class="dresscode-section container">
+    <div class="dresscode-card">
+        <div class="section-separator-icon">
+            <i class="fa-solid fa-person-dress"></i>
+        </div>
+
+        <h2>Código de Vestimenta</h2>
+        <p class="dresscode-type">Traje Formal</p>
+
+        <div class="dresscode-details">
+            <div class="rule">
+                <span>Damas:</span>
+                Vestido largo
+                <small>(El color blanco está reservado para la novia)</small>
+            </div>
+
+            <div class="rule honor-rule">
+                <span>Damas de honor:</span>
+                <strong class="burgundy-text">Burgundy</strong>
+                <span class="burgundy-swatch"></span>
+            </div>
+
+            <div class="rule">
+                <span>Caballeros:</span>
+                Traje formal
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- SECCIÓN MESA DE REGALOS -->
+        <section class="gifts-section container">
+            <div class="gifts-card">
+                <div class="section-separator-icon"><i class="fa-solid fa-gift"></i></div>
+                <h2>Mesa de Regalos</h2>
+                <p>Su presencia es nuestro mejor regalo, pero si desean tener un detalle con nosotros:</p>
+                <div class="gift-store">
+                    <h3>Liverpool</h3>
+                    <p class="event-number">No. de Evento: <strong>60047039</strong></p>
+                </div>
+                <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60047039" target="_blank" class="btn-primary">
+                    <i class="fa-solid fa-bag-shopping"></i> Ver Mesa de Regalos
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN RSVP (CONFIRMACIÓN) -->
+        <section class="rsvp-section container">
+            <div class="rsvp-card">
+                <div class="section-separator-icon"><i class="fa-regular fa-paper-plane"></i></div>
+                <h2>Confirmación de Asistencia</h2>
+                <p>Por favor confirma tu asistencia antes del <strong>30 de Enero de 2027</strong></p>
+                
+                <form id="rsvp-form" class="rsvp-form">
+                    <div class="form-group">
+                        <label for="guest-name">Nombre y Apellido:</label>
+                        <input type="text" id="guest-name" required placeholder="Ej. Carlos Mendoza">
+                    </div>
+                    <div class="form-group">
+                        <label for="guest-attendance">¿Nos acompañaras?</label>
+                        <select id="guest-attendance" required>
+                            <option value="Sí, ahí estaré con mucho gusto">Sí, ahí estaré con mucho gusto</option>
+                            <option value="Lo siento, no podré asistir">Lo siento, no podré asistir</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="guest-message">Mensaje para los novios (Opcional):</label>
+                        <textarea id="guest-message" rows="3" placeholder="Escribe tus buenos deseos..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fa-brands fa-whatsapp"></i> Enviar Confirmación por WhatsApp
+                    </button>
+                </form>
+            </div>
+        </section>
+
+<!-- FOOTER DE LA BODA -->
+        <footer class="footer">
+            <div class="container">
+                <h2>Valeria & Andrés</h2>
+                <p>¡Gracias por ser parte de nuestra historia!</p>
+                <div class="footer-date">16 . 04 . 2027</div>
+            </div>
+        </footer>
+
+        <!-- FOOTER DE ATELIER DIGITAL -->
+        <footer class="brand-section">
+            <div class="brand-divider"></div>
+            <img src="assets/img/logo.png" alt="Monograma Atelier Digital" class="brand-logo">
+            <p class="brand-created">Invitación creada por</p>
+            <h3 class="brand-name">ATELIER DIGITAL</h3>
+            <p class="brand-text">¿Te gustó esta invitación? Podemos personalizar una con tus fotos, colores, música y detalles únicos.</p>
+            <div class="brand-social">
+                <a href="https://www.instagram.com/atelier.digitalmx?igsh=M2k4cjhkeDNyZDQ3" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Atelier Digital">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/share/1HRgm8RcM1/" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Atelier Digital">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Script Principal -->
+    <script src="script.js"></script>
+</body>
+</html>
